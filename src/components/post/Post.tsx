@@ -3,6 +3,7 @@ import { AiTwotoneLike, AiTwotoneDislike } from "react-icons/ai";
 import { Link, useParams } from 'react-router-dom';
 import { fetchPostContent } from '../../api/utils';
 import { useQuery } from '@tanstack/react-query';
+import Header from '../header/Header';
 
 const SERVER_URL = 'http://localhost:3000/posts'
 
@@ -25,6 +26,7 @@ const Post = () => {
 
   return (
     <div>
+      <Header />
       <header className='details_header'>
         <h1 className='details_heading'>{post?.title}</h1>
         <div className='post_details'>

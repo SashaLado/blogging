@@ -19,7 +19,12 @@
       "published_date": "27-07-2023"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "users": [
+    {
+      "id": "alex@test.com",
+      "email": "alex@test.com",
+      "name": "testrrrrrrrr",
+      "password": "112233"
+    }
+  ]
 }

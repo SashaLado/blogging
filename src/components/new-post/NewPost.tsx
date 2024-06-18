@@ -1,6 +1,7 @@
 import React, { FormEvent, useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useMutation, useQuery } from '@tanstack/react-query';
+import Header from '../header/Header';
 const SERVER_URL = 'http://localhost:3000/posts'
 
 const EditPost = () => {
@@ -28,6 +29,7 @@ const EditPost = () => {
 
   return (
     <div>
+      <Header />
       <main className='main'>
         {mutation.isError ? (
           <div>oops... something went wrong</div>

@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { fetchAllPosts } from '../../api/utils';
 import { useQuery } from '@tanstack/react-query';
+import Header from '../header/Header';
 
 const SERVER_URL = 'http://localhost:3000/posts'
 
@@ -18,16 +19,7 @@ const Home = () => {
 
   return (
     <div>
-      <nav className='navbar'>
-        <Link to='/' className='logo'>
-          <h2>MyBlog</h2>
-        </Link>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <Link to='/post/new' className='newPostBtn'>
-            New Post
-          </Link>
-        </div>
-      </nav>
+      <Header />
       <main className='main'>
         <h2 className='heading'>Latest Posts</h2>
         <div className='posts_container'>
