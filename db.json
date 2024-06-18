@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "title": "testtest",
+      "content": "bvcsjhvbhjwevhjewvghvhchvhgvghchgcjhvhj",
+      "published_date": "27-07-2023",
+      "id": "building-a-chat-app-with-nextjs-and-novu"
+    },
+    {
+      "title": "How to create an ecommerce app with NextJS and Novu ",
+      "id": "how-to-create-an-ecommerce-app-with-nextjs-and-novu",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets.",
+      "published_date": "27-07-2023"
+    },
+    {
+      "title": "How to create",
+      "id": "how-to-create",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets.",
+      "published_date": "27-07-2023"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
