@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import { fetchAllPosts } from '../../api/utils';
 import { useQuery } from '@tanstack/react-query';
 import Header from '../header/Header';
 

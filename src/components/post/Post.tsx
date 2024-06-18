@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { AiTwotoneLike, AiTwotoneDislike } from "react-icons/ai";
 import { Link, useParams } from 'react-router-dom';
-import { fetchPostContent } from '../../api/utils';
 import { useQuery } from '@tanstack/react-query';
 import Header from '../header/Header';
 

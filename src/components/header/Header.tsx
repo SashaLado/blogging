@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import { fetchAllPosts } from '../../api/utils';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
 import useAuthStore from '../../state/state';
