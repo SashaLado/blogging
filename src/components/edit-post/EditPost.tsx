@@ -79,6 +79,10 @@ const EditPost = () => {
     });
   };
 
+  const handleDelete = () => {
+    mutationDelete.mutate();
+  };
+
   if (mutation.isPending || mutationDelete.isPending) return <p>Loading...</p>;
 
   return (
@@ -90,7 +94,7 @@ const EditPost = () => {
             <h2>Edit post</h2>
             <button
               className="button button_bordered"
-              onClick={mutationDelete.mutate}>
+              onClick={handleDelete}>
               Delete post
             </button>
           </div>

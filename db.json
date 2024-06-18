@@ -13,10 +13,10 @@
       "id": "how-to-create"
     },
     {
-      "id": "react-labs:-what-we've-been-working-on-–-february-2024",
       "title": "React Labs: What We've Been Working On – February 2024",
       "content": "React Compiler is no longer a research project: the compiler now powers instagram.com in production, and we are working to ship the compiler across additional surfaces at Meta and to prepare the first open source release.\n\nAs discussed in our previous post, React can sometimes re-render too much when state changes. Since the early days of React our solution for such cases has been manual memoization. In our current APIs, this means applying the useMemo, useCallback, and memo APIs to manually tune how much React re-renders on state changes. But manual memoization is a compromise. It clutters up our code, is easy to get wrong, and requires extra work to keep up to date.\n\nManual memoization is a reasonable compromise, but we weren’t satisfied. Our vision is for React to automatically re-render just the right parts of the UI when state changes, without compromising on React’s core mental model. We believe that React’s approach — UI as a simple function of state, with standard JavaScript values and idioms — is a key part of why React has been approachable for so many developers. That’s why we’ve invested in building an optimizing compiler for React.",
-      "published_date": "2024-06-18"
+      "published_date": "2024-06-18",
+      "id": "react-labs:-what-we've-been-working-on-–-february-2024"
     }
   ],
   "users": []
