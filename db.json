@@ -19,5 +19,12 @@
       "id": "react-labs:-what-we've-been-working-on-–-february-2024"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "id": "sasha@gmail.com",
+      "email": "sasha@gmail.com",
+      "name": "sasha",
+      "password": "11223344"
+    }
+  ]
 }
