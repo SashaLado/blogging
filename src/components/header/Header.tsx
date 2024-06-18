@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useAuthStore from '../../state/state';
 
 import './Header.scss';
+import { toast } from 'react-toastify';
 
 const mainClass = 'header';
 
@@ -11,6 +12,7 @@ const Header = () => {
 
   const handleLogout = () => {
     logout()
+    toast.success('You have logged out successfully!')
   }
 
   return (
@@ -20,9 +22,11 @@ const Header = () => {
           <Link to='/' className={`${mainClass}__logo`}>
             Blogging
           </Link>
-          <Link to='/post/new' className="link">
-            New Post +
-          </Link>
+          {isLoggedIn && (
+            <Link to='/post/new' className="link">
+              New Post +
+            </Link>
+          )}
         </div>
         <div className={`${mainClass}__right`}>
           {isLoggedIn ? (

@@ -4,6 +4,8 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import useAuthStore from '../../state/state';
 
+const mainClass = 'form';
+
 const SERVER_URL = 'http://localhost:3000/users'
 
 const Registr = () => {
@@ -44,49 +46,48 @@ const Registr = () => {
 
   return (
     <>
-      <div className="card my_login_card">
-        <div className="card-body">
-          <form onSubmit={handleSubmit} autoComplete="off">
-            <div className="mb-3">
-              <label htmlFor="exampleInputPassword1" className="form-label">
-                User name
-              </label>
-              <input
-                type="text"
-                value={name}
-                autoComplete="false"
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="exampleInputEmail1" className="form-label">
-                Email address
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                id="exampleInputEmail1"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="exampleInputPassword1" className="form-label">
-                Password
-              </label>
-              <input
-                type="password"
-                className="form-control"
-                id="exampleInputPassword1"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </form>
-        </div>
+      <div className="container">
+        <form onSubmit={handleSubmit} autoComplete="off" className={mainClass}>
+          <div className={`${mainClass}__item`}>
+            <label htmlFor="exampleInputPassword1">
+              User name
+            </label>
+            <input
+              type="text"
+              value={name}
+              autoComplete="false"
+              className="input"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className={`${mainClass}__item`}>
+            <label htmlFor="exampleInputEmail1">
+              Email address
+            </label>
+            <input
+              type="email"
+              className="input"
+              id="exampleInputEmail1"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className={`${mainClass}__item`}>
+            <label htmlFor="exampleInputPassword1">
+              Password
+            </label>
+            <input
+              type="password"
+              className="input"
+              id="exampleInputPassword1"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit" className="button">
+            Submit
+          </button>
+        </form>
       </div>
     </>
   )

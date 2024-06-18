@@ -3,13 +3,23 @@
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__item {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    background: rgba(#FFFFFF, 0.2);
+    border: 0.5px solid #FFFFFF;
+    backdrop-filter: blur(3px);
+    border-radius: 8px;
+    word-break: break-word;
   }
 }

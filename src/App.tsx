@@ -9,9 +9,9 @@ import NewPost from "./components/new-post/NewPost";
 import EditPost from './components/edit-post/EditPost';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ToastContainer } from 'react-toastify';
 import useAuthStore from './state/state';
 import ProtectedRoute from './components/ProtectedRoute';
+import { toast } from 'react-toastify';
 
 const queryClient = new QueryClient()
 
@@ -36,7 +36,7 @@ function App() {
         index: true
       },
       {
-        path: '/registr',
+        path: '/register',
         element: <Registr />,
         index: true
       },
@@ -67,7 +67,6 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ToastContainer theme="colored"></ToastContainer>
       <RouterProvider router={router} />
     </QueryClientProvider>
   );

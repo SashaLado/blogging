@@ -4,6 +4,8 @@ import { toast } from 'react-toastify';
 import useAuthStore from '../../state/state';
 import { useNavigate } from 'react-router-dom';
 
+const mainClass = 'form';
+
 const SERVER_URL = 'http://localhost:3000/users'
 
 const Login = () => {
@@ -47,37 +49,35 @@ const Login = () => {
 
   return (
     <>
-      <div className="card my_login_card">
-        <div className="card-body">
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="exampleInputEmail1" className="form-label">
-                Email address
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="exampleInputPassword1" className="form-label">
-                Password
-              </label>
-              <input
-                type="password"
-                className="form-control"
-                id="exampleInputPassword1"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </form>
-        </div>
+      <div className="container">
+        <form onSubmit={handleSubmit} className={mainClass}>
+          <div className={`${mainClass}__item`}>
+            <label htmlFor="exampleInputEmail1" className="form-label">
+              Email address
+            </label>
+            <input
+              type="email"
+              className="input"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className={`${mainClass}__item`}>
+            <label htmlFor="exampleInputPassword1" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              className="input"
+              id="exampleInputPassword1"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit" className="button">
+            Submit
+          </button>
+        </form>
       </div>
     </>
 )};

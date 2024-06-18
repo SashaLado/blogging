@@ -4,6 +4,8 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import Header from '../header/Header';
 const SERVER_URL = 'http://localhost:3000/posts'
 
+const mainClass = 'form';
+
 const EditPost = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -58,52 +60,43 @@ const EditPost = () => {
   if (mutation.isPending || mutationDelete.isPending) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className="main">
       <Header />
-      <main className='main'>
-        {mutation.isError || mutationDelete.isError ? (
-          <div>oops... something went wrong</div>
-        ) : null}
-
-        {mutation.isSuccess ? <div>Post added! <Link to={`/post/${slug}`}>Go back to the post</Link></div> : null}
-
-        {mutationDelete.isSuccess ? <div>Post deleted! <Link to={`/`}>Go back to all posts</Link></div> : null}
-
-        <button onClick={mutationDelete.mutate}>Delete post</button>
-
-        {!mutationDelete.isSuccess ? (
-          <>
-            <h2 className='heading'>Edit post</h2>
-            <form className='newPost_form' onSubmit={handleSubmit}>
-              <label htmlFor='title' className='label'>
-                Title
-              </label>
-              <input
-                type='text'
-                className='newPost_title'
-                id='title'
-                name='title'
-                value={title}
-                required
-                onChange={(e) => setTitle(e.target.value)}
-              />
-              <label htmlFor='content' className='label'>
-                Content
-              </label>
-              <textarea
-                rows={10}
-                className='newPost_content'
-                value={content}
-                required
-                onChange={(e) => setContent(e.target.value)}
-              />
-              <button className='newPostBtn submitBtn' type='submit'>
-                Edit Post
-              </button>
-            </form>
-          </>
-        ) : null}
-      </main>
+      <form className={mainClass} onSubmit={handleSubmit}>
+        <div className={`${mainClass}__header`}>
+          <h2 className="heading">Edit post</h2>
+          <button className="button button_bordered" onClick={mutationDelete.mutate}>Delete post</button>
+        </div>
+        <div className={`${mainClass}__item`}>
+          <label htmlFor="title" className="label">
+            Title
+          </label>
+          <input
+            type="text"
+            className="input"
+            id="title"
+            name="title"
+            value={title}
+            required
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div className={`${mainClass}__item`}>
+          <label htmlFor="content" className="label">
+            Content
+          </label>
+          <textarea
+            rows={10}
+            className="input"
+            value={content}
+            required
+            onChange={(e) => setContent(e.target.value)}
+          />
+        </div>
+        <button className="button" type='submit'>
+          Edit Post
+        </button>
+      </form>
     </div>
   );
 };
