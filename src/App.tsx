@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './App.css';
+import './App.scss';
 import { BrowserRouter, createBrowserRouter, Route, Router, RouterProvider, Routes } from 'react-router-dom';
 import Home from "./components/home/Home";
 import Post from "./components/post/Post";
@@ -11,7 +11,7 @@ import EditPost from './components/edit-post/EditPost';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ToastContainer } from 'react-toastify';
 import useAuthStore from './state/state';
-import ProtectedRoute from './router/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const queryClient = new QueryClient()
 
@@ -69,15 +69,6 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ToastContainer theme="colored"></ToastContainer>
       <RouterProvider router={router} />
-        {/*<Routes>*/}
-        {/*  <Route path='/' element={<Home />} />*/}
-        {/*  <Route path='/login' element={<Login />} />*/}
-        {/*  <Route path='/registr' element={<Registr />} />*/}
-        {/*  <Route path='/post/:slug' element={<Post />} />*/}
-        {/*  <Route path='/post/new' element={<NewPost />} />*/}
-        {/*  <Route path='/post/edit/:slug' element={<EditPost />} />*/}
-        {/*</Routes>*/}
-      {/*</RouterProvider>*/}
     </QueryClientProvider>
   );
 }

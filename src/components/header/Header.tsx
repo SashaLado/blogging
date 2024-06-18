@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
-import { useMutation, useQuery } from '@tanstack/react-query';
-import { toast } from 'react-toastify';
 import useAuthStore from '../../state/state';
 
-const SERVER_URL = 'http://localhost:3000/posts'
+import './Header.scss';
+
+const mainClass = 'header';
 
 const Header = () => {
   const {logout, isLoggedIn} = useAuthStore()
@@ -14,30 +14,32 @@ const Header = () => {
   }
 
   return (
-    <div>
-      <nav className='navbar'>
-        <Link to='/' className='logo'>
-          <h2>MyBlog</h2>
-        </Link>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <Link to='/post/new' className='newPostBtn'>
-            New Post
+    <header className={mainClass}>
+      <nav className={`${mainClass}__container container`}>
+        <div className={`${mainClass}__left`}>
+          <Link to='/' className={`${mainClass}__logo`}>
+            Blogging
+          </Link>
+          <Link to='/post/new' className="link">
+            New Post +
           </Link>
         </div>
-        {isLoggedIn ? (
-          <button onClick={handleLogout}>log out</button>
-        ) : (
-          <>
-            <Link to="/login" className='logo'>
-              Login
-            </Link>
-            <Link to="/register" className='logo'>
-              Registration
-            </Link>
-          </>
-        )}
+        <div className={`${mainClass}__right`}>
+          {isLoggedIn ? (
+            <button className={'button'}  onClick={handleLogout}>log out</button>
+          ) : (
+            <>
+              <Link to="/login" className='button button_bordered'>
+                Login
+              </Link>
+              <Link to="/register" className='button'>
+                Registration
+              </Link>
+            </>
+          )}
+        </div>
       </nav>
-    </div>
+    </header>
   );
 };
 
