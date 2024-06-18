@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
-import './App.scss';
-import { BrowserRouter, createBrowserRouter, Route, Router, RouterProvider, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from "./components/home/Home";
 import Post from "./components/post/Post";
 import Login from "./components/login/Login";
 import Registr from "./components/registr/Registr";
 import NewPost from "./components/new-post/NewPost";
 import EditPost from './components/edit-post/EditPost';
+import ProtectedRoute from './components/ProtectedRoute';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import useAuthStore from './state/state';
-import ProtectedRoute from './components/ProtectedRoute';
-import { toast } from 'react-toastify';
+
+import './App.scss';
 
 const queryClient = new QueryClient()
 

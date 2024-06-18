@@ -1,36 +1,23 @@
 {
   "posts": [
     {
-      "title": "testtest",
-      "content": "bvcsjhvbhjwevhjewvghvhchvhgvghchgcjhvhj",
+      "title": "Quick Start",
+      "content": "The markup syntax you’ve seen above is called JSX. It is optional, but most React projects use JSX for its convenience. All of the tools we recommend for local development support JSX out of the box.JSX is stricter than HTML. You have to close tags like <br />. Your component also can’t return multiple JSX tags. You have to wrap them into a shared parent, like a or an empty wrapper:",
       "published_date": "27-07-2023",
       "id": "building-a-chat-app-with-nextjs-and-novu"
     },
     {
-      "title": "How to create an ecommerce app with NextJS and Novu ",
-      "id": "how-to-create-an-ecommerce-app-with-nextjs-and-novu",
-      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets.",
-      "published_date": "27-07-2023"
+      "title": "React Conf 2024 Recap",
+      "content": "At React Conf 2024, we announced the React 19 RC, the React Native New Architecture Beta, and an experimental release of the React Compiler. The community also took the stage to announce React Router v7, Universal Server Components in Expo Router, React Server Components in RedwoodJS, and much more.\n\nThe entire day 1 and day 2 streams are available online. In this post, we’ll summarize the talks and announcements from the event.",
+      "published_date": "27-07-2023",
+      "id": "how-to-create"
     },
     {
-      "title": "How to create",
-      "id": "how-to-create",
-      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets.",
-      "published_date": "27-07-2023"
-    },
-    {
-      "id": "992c",
-      "title": "testetstetst",
-      "content": "djhqvd bnqwvchjwqevx vhdvh1 d2vfduy dhqvdyu2 djhqvd",
+      "id": "react-labs:-what-we've-been-working-on-–-february-2024",
+      "title": "React Labs: What We've Been Working On – February 2024",
+      "content": "React Compiler is no longer a research project: the compiler now powers instagram.com in production, and we are working to ship the compiler across additional surfaces at Meta and to prepare the first open source release.\n\nAs discussed in our previous post, React can sometimes re-render too much when state changes. Since the early days of React our solution for such cases has been manual memoization. In our current APIs, this means applying the useMemo, useCallback, and memo APIs to manually tune how much React re-renders on state changes. But manual memoization is a compromise. It clutters up our code, is easy to get wrong, and requires extra work to keep up to date.\n\nManual memoization is a reasonable compromise, but we weren’t satisfied. Our vision is for React to automatically re-render just the right parts of the UI when state changes, without compromising on React’s core mental model. We believe that React’s approach — UI as a simple function of state, with standard JavaScript values and idioms — is a key part of why React has been approachable for so many developers. That’s why we’ve invested in building an optimizing compiler for React.",
       "published_date": "2024-06-18"
     }
   ],
-  "users": [
-    {
-      "id": "alex@test.com",
-      "email": "alex@test.com",
-      "name": "testrrrrrrrr",
-      "password": "112233"
-    }
-  ]
+  "users": []
 }

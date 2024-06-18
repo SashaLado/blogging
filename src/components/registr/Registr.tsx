@@ -6,13 +6,13 @@ import useAuthStore from '../../state/state';
 
 const mainClass = 'form';
 
-const SERVER_URL = 'http://localhost:3000/users'
+const SERVER_URL = 'http://localhost:3000/users';
 
 const Registr = () => {
-  const [email, setEmail] = useState<string>("")
-  const [password, setPassword] = useState<string>("")
-  const [name, setName] = useState<string>("")
-  const {login} = useAuthStore()
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const {login} = useAuthStore();
   const navigate = useNavigate();
 
   const mutation = useMutation({
@@ -25,21 +25,21 @@ const Registr = () => {
         },
       })
         .then((r: any) => {
-          toast.success('Registered successfully')
+          toast.success('Registered successfully');
           localStorage.setItem('accessToken', data?.id);
-          login()
-          navigate('/')
+          login();
+          navigate('/');
         })
         .catch((err) => {
-          toast.error(`Registration failed due to ${err.message}`)
+          toast.error(`Registration failed due to ${err.message}`);
         })
     },
-  })
+  });
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const data = {email, name, password, id: email}
-    mutation.mutate(data)
+    e.preventDefault();
+    const data = {email, name, password, id: email};
+    mutation.mutate(data);
   };
 
   if (mutation.isPending) return <p>Loading...</p>;
@@ -47,7 +47,11 @@ const Registr = () => {
   return (
     <>
       <div className="container">
-        <form onSubmit={handleSubmit} autoComplete="off" className={mainClass}>
+        <form
+          onSubmit={handleSubmit}
+          autoComplete="off"
+          className={mainClass}
+        >
           <div className={`${mainClass}__item`}>
             <label htmlFor="exampleInputPassword1">
               User name

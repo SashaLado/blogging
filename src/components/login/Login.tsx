@@ -6,12 +6,12 @@ import { useNavigate } from 'react-router-dom';
 
 const mainClass = 'form';
 
-const SERVER_URL = 'http://localhost:3000/users'
+const SERVER_URL = 'http://localhost:3000/users';
 
 const Login = () => {
-  const [email, setEmail] = useState<string>("")
-  const [password, setPassword] = useState<string>("")
-  const {login} = useAuthStore()
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const {login} = useAuthStore();
   const navigate = useNavigate();
 
   const mutation = useMutation({
@@ -22,27 +22,27 @@ const Login = () => {
         })
         .then((resp: any) => {
           if (Object.keys(resp || {}).length === 0) {
-            toast.error('Please enter correct email')
+            toast.error('Please enter correct email');
           } else {
             if (resp.password === password) {
-              toast.success('Login successfully')
+              toast.success('Login successfully');
               localStorage.setItem('accessToken', resp.id);
-              login()
-              navigate('/')
+              login();
+              navigate('/');
             } else {
-              toast.success('Please enter correct password')
+              toast.success('Please enter correct password');
             }
           }
         })
         .catch((err) => {
-          toast.error(`Login failed due to ${err.message}`)
+          toast.error(`Login failed due to ${err.message}`);
         })
     },
   })
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    mutation.mutate()
+    e.preventDefault();
+    mutation.mutate();
   };
 
   if (mutation.isPending) return <p>Loading...</p>;
@@ -52,7 +52,7 @@ const Login = () => {
       <div className="container">
         <form onSubmit={handleSubmit} className={mainClass}>
           <div className={`${mainClass}__item`}>
-            <label htmlFor="exampleInputEmail1" className="form-label">
+            <label htmlFor="exampleInputEmail1">
               Email address
             </label>
             <input
@@ -64,7 +64,7 @@ const Login = () => {
             />
           </div>
           <div className={`${mainClass}__item`}>
-            <label htmlFor="exampleInputPassword1" className="form-label">
+            <label htmlFor="exampleInputPassword1">
               Password
             </label>
             <input

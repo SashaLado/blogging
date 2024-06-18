@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import { useQuery } from '@tanstack/react-query';
 import Header from '../header/Header';
 import './Home.scss';
 
-const SERVER_URL = 'http://localhost:3000/posts'
+const SERVER_URL = 'http://localhost:3000/posts';
+
 const mainClass = 'list';
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
       fetch(SERVER_URL).then((res) =>
         res.json(),
       ),
-  })
+  });
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -29,7 +30,10 @@ const Home = () => {
                 {post?.title}
               </h2>
               <span className={`${mainClass}__date`}>Published at: {post?.published_date}</span>
-              <p className={`${mainClass}__content`}>{post?.content}</p>
+              <p className={`${mainClass}__content`}>
+                {post?.content?.slice(0, 300)}
+                {post?.content?.length > 300 && '...'}
+              </p>
             </Link>
           ))}
         </div>

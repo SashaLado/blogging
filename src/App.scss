@@ -1,7 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   min-height: 100%;
-  width: 100%;
   height: auto;
+  width: 100%;
 }
 
 #root,
@@ -27,7 +31,7 @@ body {
   width: 100vw;
   max-width: 100%;
   min-height: 100vh;
-  padding-top: 60px;
+  padding-top: 100px;
   background-color: #4158D0;
   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
   color: #FFFFFF;
@@ -39,6 +43,10 @@ body {
   font-style: normal;
   overflow: auto;
   overflow-x: hidden;
+
+  @media (min-width: 768px) {
+    padding-top: 60px;
+  }
 }
 
 h1,
@@ -52,8 +60,8 @@ p {
   height: 100%;
   width: 100%;
   max-width: 1600px;
-  margin: 0 auto;
   padding: 0 16px;
+  margin: 0 auto;
 
   @media (min-width: 1248px) {
     padding: 0 54px;
@@ -85,10 +93,6 @@ p {
   text-shadow: none;
   overflow: hidden;
   cursor: pointer;
-  transition:
-          background-color 0.3s ease-out,
-          color 0.3s ease-out,
-          border-color 0.3s ease-out;
   z-index: 1;
 
   &:not(:disabled) {
@@ -112,26 +116,22 @@ a {
   color: #FFFFFF;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 img {
   border: none;
 }
 
 .input {
-  cursor: text;
-  border-radius: 8px;
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
   padding: 10px;
   color: #4158D0;
-  transition: background-color .3s;
   background: #FFFFFF;
+  cursor: text;
+  border-radius: 8px;
   border: 1px solid transparent;
+  transition: background-color .3s;
 
   &:focus {
     border: 1px solid #4158D0;
@@ -146,11 +146,11 @@ img {
   flex-direction: column;
   gap: 15px;
   padding: 20px;
-  margin: auto auto;
   background: rgba(#FFFFFF, 0.2);
   border: 0.5px solid #FFFFFF;
   backdrop-filter: blur(3px);
   border-radius: 8px;
+  margin: auto auto;
 
   a {
     text-decoration: underline;

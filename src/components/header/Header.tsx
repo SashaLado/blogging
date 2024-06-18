@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import useAuthStore from '../../state/state';
+import { toast } from 'react-toastify';
 
 import './Header.scss';
-import { toast } from 'react-toastify';
 
 const mainClass = 'header';
 
 const Header = () => {
-  const {logout, isLoggedIn} = useAuthStore()
+  const {logout, isLoggedIn} = useAuthStore();
 
   const handleLogout = () => {
-    logout()
-    toast.success('You have logged out successfully!')
+    logout();
+    toast.success('You have logged out successfully!');
   }
 
   return (
@@ -30,7 +30,9 @@ const Header = () => {
         </div>
         <div className={`${mainClass}__right`}>
           {isLoggedIn ? (
-            <button className={'button'}  onClick={handleLogout}>log out</button>
+            <button className={'button'} onClick={handleLogout}>
+              log out
+            </button>
           ) : (
             <>
               <Link to="/login" className='button button_bordered'>
